@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import SongReviews from "./components/songReviews";
 
 function App() {
   return (
-    <h1>Homepage</h1>
+      <SongReviews></SongReviews>
   );
 }
 
