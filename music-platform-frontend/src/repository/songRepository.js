@@ -4,6 +4,10 @@ const SongRepository = {
 
     getAllSongReviews : () =>{
         return axios.get("/songs/reviews");
+    },
+
+    getAllSongs : () => {
+        return axios.get("/songs/all");
     }
 
 };

@@ -1,5 +1,5 @@
 import React, {Component, useEffect, useState} from "react";
-import SongRepository from "../repository/songRepository";
+import SongRepository from "../../repository/songRepository";
 
 const SongReviews = () => {
 
@@ -23,11 +23,12 @@ const SongReviews = () => {
             {songReviews.map(songReview => {
                 return (
                     <div key={songReview.id}>
-                        <h2>name: {songReview.songTitle}</h2>
-                        <h2>country: {songReview.songDatePublished}</h2>
-                        <h2>country: {songReview.reviewContent}</h2>
-                        <h2>country: {songReview.reviewDateCreated}</h2>
-                        <h2>country: {songReview.userUsername}</h2>
+                        <h2>Title: {songReview.songTitle}</h2>
+                        <h2>Date published: {songReview.songDatePublished}</h2>
+                        <h2>Content: {songReview.reviewContent}</h2>
+                        <h2>Date created: {songReview.reviewDateCreated}</h2>
+                        <h2>User: {songReview.userUsername}</h2>
+                        <h2>Grade: {songReview.reviewGrade}</h2>
 
                         <hr />
                     </div>
