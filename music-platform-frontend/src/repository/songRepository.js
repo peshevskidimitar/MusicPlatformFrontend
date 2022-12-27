@@ -8,6 +8,10 @@ const SongRepository = {
 
     getAllSongs : () => {
         return axios.get("/songs/all");
+    },
+
+    getSongsByGenre: () => {
+        return axios.get("/songs/byGenre");
     }
 
 };
