@@ -32,7 +32,7 @@ const AddNewSong = () => {
         albumId: null,
         recordLabelId: null,
         artistId: null,
-        file: "Upload a file"
+        song: "Upload a file"
     });
 
     useEffect(() => {
@@ -74,7 +74,7 @@ const AddNewSong = () => {
     };
 
 
-    const sendSongData = () => {
+    const sendSongData = async (data) => {
         if (
             formDataSong.title ==="" ||
             formDataSong.datePublished== null ||
@@ -86,9 +86,17 @@ const AddNewSong = () => {
 
         } else {
             const formData = new FormData();
-            formData.append("song", formDataSong.file[0]);
+            // console.log(data.song[0]);
+            formData.append("song", data.song[0]);
+            formData.append("title", formDataSong.title);
+            formData.append("datePublished", formDataSong.datePublished);
+            formData.append("genreId", formDataSong.genreId);
+            formData.append("lyrics", formDataSong.lyrics);
+            formData.append("albumId", formDataSong.albumId);
+            formData.append("recordLabelId", formDataSong.recordLabelId);
+            formData.append("artistId", formDataSong.artistId);
 
-            SongRepository.addNewSong(formData,formDataSong).then(()=>{
+            SongRepository.addNewSong(formData).then(()=>{
                 navigate("/songs/all");
             });
             setFormDataSong({
@@ -269,12 +277,13 @@ const AddNewSong = () => {
                 variant="contained"
                 component="label"
             >
-                {formDataSong.file.split("\\")[formDataSong.file.split("\\").length-1]}
+                {formDataSong.song.split("\\")[formDataSong.song.split("\\").length-1]}
                 <input
                     type="file"
-                    {...register("file")}
+                    {...register("song")}
                     hidden
                     onInput={handleChangeSong}
+                    name={"song"}
                     className="form-control" id="customFile"
                 />
             </Button>
@@ -282,16 +291,25 @@ const AddNewSong = () => {
             <br/>
 
 
-            <Button
-                onClick={sendSongData}
-                style={{ width: 30 + "%" }}
-                type="button"
-                variant="contained"
-                className="flex text-white ms-auto mt-16"
-                color="primary"
-            >
-                Add new song
-            </Button>
+            {/*<Button*/}
+            {/*    onClick={sendSongData}*/}
+            {/*    style={{ width: 30 + "%" }}*/}
+            {/*    type="button"*/}
+            {/*    variant="contained"*/}
+            {/*    className="flex text-white ms-auto mt-16"*/}
+            {/*    color="primary"*/}
+            {/*>*/}
+            {/*    Add new song*/}
+            {/*</Button>*/}
+
+                <Button
+                    type="button"
+                    variant="contained"
+                    color="primary">
+
+                    <input type="submit" className={"rounded"}
+                           value={"Add new Song"}/>
+                </Button>
 
             </form>
         </>

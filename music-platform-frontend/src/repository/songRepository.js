@@ -22,18 +22,12 @@ const SongRepository = {
         return axios.get("/songs/total-views");
     },
 
-    addNewSong : (formData,formDataSong) =>{
-        return axios.post("/songs/add",formData,{params: {
-                title: formDataSong.title,
-                datePublished: formDataSong.datePublished,
-                genreId: formDataSong.genreId,
-                lyrics: formDataSong.lyrics,
-                albumId: formDataSong.albumId,
-                recordLabelId: formDataSong.recordLabelId,
-                artistId: formDataSong.artistId
-            },
+    addNewSong : (formData) =>{
+        // console.log("this is form data:" + formData.get("song"));
+        return axios.post("/songs/add",formData,{
             headers: {
-                'Content-Type':"multi-part/form-data"
+                'Content-Type':"multipart/form-data",
+                'responseType': 'blob'
             }});
     }
 
