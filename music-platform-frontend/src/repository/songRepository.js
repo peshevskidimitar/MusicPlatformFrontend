@@ -2,8 +2,10 @@ import axios from "axios";
 
 const SongRepository = {
 
-    getAllSongReviews : () =>{
-        return axios.get("/songs/reviews");
+    getAllSongReviews : (selectedSongs) =>{
+        return axios.get("/songs/reviews",{params:{
+            songTitle: selectedSongs
+            }});
     },
 
     getAllSongs : () => {
@@ -36,6 +38,10 @@ const SongRepository = {
                 playlistId: formData.playlistId,
                 audioContentId: formData.audioContentId,
             }})
+    },
+
+    getAll: () =>{
+        return axios.get("/songs");
     }
 
 };
