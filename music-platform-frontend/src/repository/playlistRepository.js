@@ -20,7 +20,12 @@ const PlaylistRepository = {
                 playlistTypeId: formDataPlaylist.playlistTypeId,
                 userId: formDataPlaylist.userId
             }})
+    },
+
+    getAll : () =>{
+        return axios.get("/playlists");
     }
+
 };
 
 export default PlaylistRepository;

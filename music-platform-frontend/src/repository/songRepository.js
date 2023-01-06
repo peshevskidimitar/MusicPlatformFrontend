@@ -29,6 +29,13 @@ const SongRepository = {
                 'Content-Type':"multipart/form-data",
                 'responseType': 'blob'
             }});
+    },
+
+    insertSongIntoPlaylist : (formData) =>{
+        return axios.post(`/songs/add-to-playlist`,null,{params: {
+                playlistId: formData.playlistId,
+                audioContentId: formData.audioContentId,
+            }})
     }
 
 };

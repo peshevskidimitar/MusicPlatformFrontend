@@ -16,6 +16,7 @@ import TotalViewsOfArtistSongs from "./components/totalViewsOfArtistSongs/totalV
 import AddNewPlaylist from "./components/addNewPlaylist/addNewPlaylist";
 import AddNewReview from "./components/addNewReview/addNewReview";
 import AddNewSong from "./components/addNewSong/addNewSong";
+import InsertSongIntoPlaylist from "./components/insertSongIntoPlaylist/insertSongIntoPlaylist";
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/playlists/add" element={<AddNewPlaylist/>}/>
                 <Route path="/reviews/add" element={<AddNewReview/>}/>
                 <Route path="/songs/add" element={<AddNewSong/>}/>
+                <Route path="/songs/insertSongIntoPlaylist" element={<InsertSongIntoPlaylist/>}/>
 
             </Routes>
         </div>
