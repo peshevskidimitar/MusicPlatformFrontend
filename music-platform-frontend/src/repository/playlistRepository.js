@@ -12,8 +12,15 @@ const PlaylistRepository = {
 
     getCountOfSongs: () => {
         return axios.get("/playlists/getCountSongs");
-    }
+    },
 
+    addPlaylist: (formDataPlaylist) => {
+        return axios.post(`/playlists/add`,null,{params: {
+                title: formDataPlaylist.title,
+                playlistTypeId: formDataPlaylist.playlistTypeId,
+                userId: formDataPlaylist.userId
+            }})
+    }
 };
 
 export default PlaylistRepository;
