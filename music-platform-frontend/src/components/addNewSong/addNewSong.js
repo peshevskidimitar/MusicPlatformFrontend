@@ -12,10 +12,13 @@ import RecordLabelRepository from "../../repository/recordLabelRepository";
 import ArtistRepository from "../../repository/artistRepository";
 import SongRepository from "../../repository/songRepository";
 import {useForm} from "react-hook-form";
+import { useLocation } from 'react-router-dom';
 
 const AddNewSong = () => {
 
     const navigate=useNavigate();
+
+    const location = useLocation();
 
     const [genres, setGenres] = useState([]);
     const [albums, setAlbums] = useState([]);
@@ -98,6 +101,7 @@ const AddNewSong = () => {
 
             SongRepository.addNewSong(formData).then(()=>{
                 navigate("/songs/all");
+                window.location.reload(true);
             });
             setFormDataSong({
                 title: "",
