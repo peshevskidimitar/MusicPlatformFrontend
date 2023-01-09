@@ -169,7 +169,7 @@ const AddNewReview = () => {
                 type="button"
                 variant="contained"
                 className="flex text-white ms-auto mt-16"
-                color="primary"
+                color="success"
             >
                 Add new review
             </Button>

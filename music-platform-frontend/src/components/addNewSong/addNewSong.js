@@ -287,7 +287,8 @@ const AddNewSong = () => {
             <Button
                 variant="contained"
                 component="label"
-                color={"secondary"}
+                color={"success"}
+                style={{ width: 60 + "%" }}
             >
                 {formDataSong.song.split("\\")[formDataSong.song.split("\\").length-1]}
                 <input
@@ -318,7 +319,7 @@ const AddNewSong = () => {
                 <Button
                     type="button"
                     variant="contained"
-                    color="primary"
+                    color="success"
                     className={"fileUploadExtern"}>
 
                     <input type="submit" className={"fileUploadInner"}
