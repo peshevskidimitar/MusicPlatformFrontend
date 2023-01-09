@@ -54,30 +54,30 @@ const Song = () => {
                     <TableHead>
                         <TableRow>
 
-                            <StyledTableCell align="right">Song title</StyledTableCell>
-                            <StyledTableCell align="right">Song Date Published</StyledTableCell>
-                            <StyledTableCell align="right">Views</StyledTableCell>
-                            <StyledTableCell align="right">Genre</StyledTableCell>
-                            <StyledTableCell align="right">Artist name</StyledTableCell>
-                            <StyledTableCell align="right">Artist country</StyledTableCell>
-                            <StyledTableCell align="right">Album</StyledTableCell>
-                            <StyledTableCell align="right">Record Label</StyledTableCell>
-                            <StyledTableCell align="right">Music Professionals</StyledTableCell>
+                            <StyledTableCell align="left">Song title</StyledTableCell>
+                            <StyledTableCell align="left">Song Date Published</StyledTableCell>
+                            <StyledTableCell align="left">Views</StyledTableCell>
+                            <StyledTableCell align="left">Genre</StyledTableCell>
+                            <StyledTableCell align="left">Artist name</StyledTableCell>
+                            <StyledTableCell align="left">Artist country</StyledTableCell>
+                            <StyledTableCell align="left">Album</StyledTableCell>
+                            <StyledTableCell align="left">Record Label</StyledTableCell>
+                            <StyledTableCell align="left">Music Professionals</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {songs.map(songReview => {
                             return (
                                 <StyledTableRow>
-                                    <StyledTableCell align="right">{songReview.songTitle}</StyledTableCell>
-                                    <StyledTableCell align="right">{songReview.songDatePublished}</StyledTableCell>
-                                    <StyledTableCell align="right">{songReview.songViews}</StyledTableCell>
-                                    <StyledTableCell align="right">{songReview.genreName}</StyledTableCell>
-                                    <StyledTableCell align="right">{songReview.artistFullName}</StyledTableCell>
-                                    <StyledTableCell align="right">{songReview.artistCountry}</StyledTableCell>
-                                    <StyledTableCell align="right">{songReview.albumTitle}</StyledTableCell>
-                                    <StyledTableCell align="right">{songReview.recordLabelName}</StyledTableCell>
-                                    <StyledTableCell align="right">
+                                    <StyledTableCell align="left">{songReview.songTitle}</StyledTableCell>
+                                    <StyledTableCell align="left">{songReview.songDatePublished}</StyledTableCell>
+                                    <StyledTableCell align="left">{songReview.songViews}</StyledTableCell>
+                                    <StyledTableCell align="left">{songReview.genreName}</StyledTableCell>
+                                    <StyledTableCell align="left">{songReview.artistFullName}</StyledTableCell>
+                                    <StyledTableCell align="left">{songReview.artistCountry}</StyledTableCell>
+                                    <StyledTableCell align="left">{songReview.albumTitle}</StyledTableCell>
+                                    <StyledTableCell align="left">{songReview.recordLabelName}</StyledTableCell>
+                                    <StyledTableCell align="left">
                                         {songReview.musicProfessionals.map((element) => (
                                             <div>
                                                 {element.musicProfessionalName} {element.musicProfessionalSurname} as {element.musicProfessionalProfession}

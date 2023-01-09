@@ -2,16 +2,20 @@ import axios from "axios";
 
 const PlaylistRepository = {
 
-    getAllPlaylists : () =>{
-        return axios.get("/playlists/all");
+    getAllPlaylists : (username) =>{
+        return axios.get("/playlists/all",{params:{
+            userUsername:username
+            }});
     },
 
     getAllUserStatsForPlaylists : () => {
         return axios.get("/playlists/stats");
     },
 
-    getCountOfSongs: () => {
-        return axios.get("/playlists/getCountSongs");
+    getCountOfSongs: (username) => {
+        return axios.get("/playlists/getCountSongs",{params:{
+                username:username
+            }});
     },
 
     addPlaylist: (formDataPlaylist) => {

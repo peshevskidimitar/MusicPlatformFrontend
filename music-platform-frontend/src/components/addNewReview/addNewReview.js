@@ -85,7 +85,7 @@ const AddNewReview = () => {
                     onChange={handleChangeReview}
                     name={"audioContentId"}
                     value={formDataReview.audioContentId}
-
+                    required={true}
                 >
                     {audioContents.map((element) => (
                         <MenuItem
@@ -113,6 +113,7 @@ const AddNewReview = () => {
                     onChange={handleChangeReview}
                     name={"userId"}
                     value={formDataReview.userId}
+                    required={true}
                 >
                     {users.map((element) => (
                         <MenuItem
@@ -139,6 +140,7 @@ const AddNewReview = () => {
                     onChange={handleChangeReview}
                     value={formDataReview.grade}
                     type={"number"}
+                    required={true}
                 />
             </FormControl>
 
@@ -155,6 +157,7 @@ const AddNewReview = () => {
                     margin={"normal"}
                     onChange={handleChangeReview}
                     value={formDataReview.content}
+                    required={true}
                 />
             </FormControl>
 

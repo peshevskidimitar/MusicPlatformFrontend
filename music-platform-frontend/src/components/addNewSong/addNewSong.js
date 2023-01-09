@@ -13,6 +13,7 @@ import ArtistRepository from "../../repository/artistRepository";
 import SongRepository from "../../repository/songRepository";
 import {useForm} from "react-hook-form";
 import { useLocation } from 'react-router-dom';
+import {blue} from "@mui/material/colors";
 
 const AddNewSong = () => {
 
@@ -131,6 +132,7 @@ const AddNewSong = () => {
                     margin={"normal"}
                     onChange={handleChangeSong}
                     value={formDataSong.title}
+                    required={true}
                 />
             </FormControl>
 
@@ -147,6 +149,7 @@ const AddNewSong = () => {
                     onChange={handleChangeSong}
                     value={formDataSong.datePublished}
                     type={"date"}
+                    required={true}
                 />
             </FormControl>
 
@@ -164,6 +167,7 @@ const AddNewSong = () => {
                     onChange={handleChangeSong}
                     name={"genreId"}
                     value={formDataSong.genreId}
+                    required={true}
 
                 >
                     {genres.map((element) => (
@@ -192,6 +196,7 @@ const AddNewSong = () => {
                     onChange={handleChangeSong}
                     name={"artistId"}
                     value={formDataSong.artistId}
+                    required={true}
                 >
                     {artists.map((element) => (
                         <MenuItem
@@ -219,6 +224,7 @@ const AddNewSong = () => {
                     onChange={handleChangeSong}
                     name={"albumId"}
                     value={formDataSong.albumId}
+                    required={true}
                 >
                     {albums.map((element) => (
                         <MenuItem
@@ -246,6 +252,7 @@ const AddNewSong = () => {
                     onChange={handleChangeSong}
                     name={"recordLabelId"}
                     value={formDataSong.recordLabelId}
+                    required={true}
                 >
                     {recordLabels.map((element) => (
                         <MenuItem
@@ -280,6 +287,7 @@ const AddNewSong = () => {
             <Button
                 variant="contained"
                 component="label"
+                color={"secondary"}
             >
                 {formDataSong.song.split("\\")[formDataSong.song.split("\\").length-1]}
                 <input
@@ -289,6 +297,7 @@ const AddNewSong = () => {
                     onInput={handleChangeSong}
                     name={"song"}
                     className="form-control" id="customFile"
+                    required
                 />
             </Button>
 
@@ -309,9 +318,10 @@ const AddNewSong = () => {
                 <Button
                     type="button"
                     variant="contained"
-                    color="primary">
+                    color="primary"
+                    className={"fileUploadExtern"}>
 
-                    <input type="submit" className={"rounded"}
+                    <input type="submit" className={"fileUploadInner"}
                            value={"Add new Song"}/>
                 </Button>
 

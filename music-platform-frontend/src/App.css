@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.fileUploadInner{
+  background:none;
+  border:none;
+  color: white;
+  font-size: 18px;
+}
+
+.fileUploadExtern{
+  margin-top: 10px !important;
+}
+
+.userPlaylistTablesHeaders{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+}
