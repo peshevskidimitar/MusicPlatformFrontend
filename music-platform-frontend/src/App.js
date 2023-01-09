@@ -19,12 +19,14 @@ import AddNewSong from "./components/addNewSong/addNewSong";
 import InsertSongIntoPlaylist from "./components/insertSongIntoPlaylist/insertSongIntoPlaylist";
 import {Col, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
 import Container from 'react-bootstrap/Container';
+import Home from "./components/home/home";
 
 function App() {
     return (
         <>
-        <Navbar  bg="success" variant="dark" expand="lg" >
+        <Navbar  bg="success" variant="dark" expand="lg"  >
             <Container>
+                <Navbar.Brand href="/"><img src={require("./logoNoText.png")} width={50} height={50}/> Streamy</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="m-auto">
@@ -32,7 +34,7 @@ function App() {
                         <NavDropdown title="Songs" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/songs/all">All</NavDropdown.Item>
                             <NavDropdown.Item href="/songs/byGenre">
-                                Songs by Genre
+                                Songs by genre
                             </NavDropdown.Item>
                             <NavDropdown.Item href="/songs/mostPopular">Most popular songs by year</NavDropdown.Item>
                             {/*<NavDropdown.Divider />*/}
@@ -62,8 +64,9 @@ function App() {
             </Container>
         </Navbar>
 
-        <div className="App">
+        <div className="App mt-3">
             <Routes>
+                <Route path="/" element={<Home/>}/>
                 <Route path="/songs/reviews" element={<SongReviews/>}/>
                 <Route path="/songs/all" element={<Song/>}/>
                 <Route path="/songs/byGenre" element={<CountOfSongsPerGenre/>}/>
