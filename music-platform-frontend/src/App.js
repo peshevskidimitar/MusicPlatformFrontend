@@ -17,9 +17,51 @@ import AddNewPlaylist from "./components/addNewPlaylist/addNewPlaylist";
 import AddNewReview from "./components/addNewReview/addNewReview";
 import AddNewSong from "./components/addNewSong/addNewSong";
 import InsertSongIntoPlaylist from "./components/insertSongIntoPlaylist/insertSongIntoPlaylist";
+import {Col, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
 
 function App() {
     return (
+        <>
+        <Navbar  bg="success" variant="dark" expand="lg" >
+            <Container>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="m-auto">
+
+                        <NavDropdown title="Songs" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="/songs/all">All</NavDropdown.Item>
+                            <NavDropdown.Item href="/songs/byGenre">
+                                Songs by Genre
+                            </NavDropdown.Item>
+                            <NavDropdown.Item href="/songs/mostPopular">Most popular songs by year</NavDropdown.Item>
+                            {/*<NavDropdown.Divider />*/}
+                            <NavDropdown.Item href="/songs/reviews">
+                                Song reviews
+                            </NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link href="/podcasts/all">Podcasts</Nav.Link>
+                        <Nav.Link href="/songs/totalViews">Artists statistics</Nav.Link>
+                        <Nav.Link href="/audioContent/reviewStats">Monthly reviews</Nav.Link>
+
+                        <NavDropdown title="Playlists" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="/playlists/all">All</NavDropdown.Item>
+                            <NavDropdown.Item href="/playlists/getCountSongs">Playlist count of songs</NavDropdown.Item>
+                            <NavDropdown.Item href="/playlists/stats">
+                                Average songs per playlist
+                            </NavDropdown.Item>
+                        </NavDropdown>
+
+                        <Nav.Link href="/songs/add">Add song</Nav.Link>
+                        <Nav.Link href="/playlists/add">Add playlist</Nav.Link>
+                        <Nav.Link href="/reviews/add">Add review</Nav.Link>
+                        <Nav.Link href="/songs/insertSongIntoPlaylist">Add song to playlist</Nav.Link>
+
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+
         <div className="App">
             <Routes>
                 <Route path="/songs/reviews" element={<SongReviews/>}/>
@@ -40,6 +82,8 @@ function App() {
 
             </Routes>
         </div>
+        </>
+
     );
 }
 
