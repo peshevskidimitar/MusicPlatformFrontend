@@ -157,7 +157,7 @@ const AddNewSong = () => {
 
             <FormControl style={{ width: 60 + "%" }} margin={"normal"}>
                 <InputLabel id="demo-simple-select-label">
-                    Genre:
+                    Genre
                 </InputLabel>
 
                 <Select
@@ -186,7 +186,7 @@ const AddNewSong = () => {
 
             <FormControl style={{ width: 60 + "%" }} margin={"normal"}>
                 <InputLabel id="demo-simple-select-label">
-                    Artist:
+                    Artist
                 </InputLabel>
 
                 <Select
@@ -214,7 +214,7 @@ const AddNewSong = () => {
 
             <FormControl style={{ width: 60 + "%" }} margin={"normal"}>
                 <InputLabel id="demo-simple-select-label">
-                    Album:
+                    Album
                 </InputLabel>
 
                 <Select
@@ -242,7 +242,7 @@ const AddNewSong = () => {
 
             <FormControl style={{ width: 60 + "%" }} margin={"normal"}>
                 <InputLabel id="demo-simple-select-label">
-                    Record Label:
+                    Record Label
                 </InputLabel>
 
                 <Select

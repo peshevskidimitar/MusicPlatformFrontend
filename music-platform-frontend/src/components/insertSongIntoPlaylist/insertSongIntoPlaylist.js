@@ -70,7 +70,7 @@ const InsertSongIntoPlaylist = () => {
 
             <FormControl style={{ width: 60 + "%" }} margin={"normal"}>
                 <InputLabel id="demo-simple-select-label">
-                    Audio content:
+                    Audio content
                 </InputLabel>
 
                 <Select
@@ -98,7 +98,7 @@ const InsertSongIntoPlaylist = () => {
 
             <FormControl style={{ width: 60 + "%" }} margin={"normal"}>
                 <InputLabel id="demo-simple-select-label">
-                    Playlist:
+                    Playlist
                 </InputLabel>
 
                 <Select
@@ -115,7 +115,7 @@ const InsertSongIntoPlaylist = () => {
                             key={element.id}
                             value={element.id}
                         >
-                            {element.user.username} {element.title}
+                            {element.user.username}'s {element.title}
                         </MenuItem>
                     ))}
                 </Select>

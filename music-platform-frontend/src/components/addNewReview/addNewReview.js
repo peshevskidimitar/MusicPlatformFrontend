@@ -75,7 +75,7 @@ const AddNewReview = () => {
 
             <FormControl style={{ width: 60 + "%" }} margin={"normal"}>
                 <InputLabel id="demo-simple-select-label">
-                    Audio content:
+                    Audio content
                 </InputLabel>
 
                 <Select
@@ -103,7 +103,7 @@ const AddNewReview = () => {
 
             <FormControl style={{ width: 60 + "%" }} margin={"normal"}>
                 <InputLabel id="demo-simple-select-label">
-                    User:
+                    User
                 </InputLabel>
 
                 <Select

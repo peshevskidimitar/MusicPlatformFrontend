@@ -1,0 +1,8 @@
+// change the theme
+$theme-colors: (
+        "primary": #375141,
+        "--bs-dropdown-link-active-bg": #375141
+);
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';

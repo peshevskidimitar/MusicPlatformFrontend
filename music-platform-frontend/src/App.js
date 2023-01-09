@@ -20,71 +20,89 @@ import InsertSongIntoPlaylist from "./components/insertSongIntoPlaylist/insertSo
 import {Col, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
 import Container from 'react-bootstrap/Container';
 import Home from "./components/home/home";
+import {createMuiTheme, ThemeProvider} from "@mui/material";
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: "#375141"
+        },
+        secondary: {
+            main: "#375141"
+        }
+    }
+});
 
 function App() {
     return (
         <>
-        <Navbar  bg="success" variant="dark" expand="lg"  >
-            <Container>
-                <Navbar.Brand href="/"><img src={require("./logoNoText.png")} width={50} height={50}/> Streamy</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="m-auto">
+            <ThemeProvider theme={theme}>
+                <Navbar bg="success" variant="dark" expand="lg">
+                    <Container>
+                        <Navbar.Brand href="/"><img src={require("./logoNoText.png")} width={50}
+                                                    height={50}/> Streamy</Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="m-auto">
 
-                        <NavDropdown title="Songs" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/songs/all">All</NavDropdown.Item>
-                            <NavDropdown.Item href="/songs/byGenre">
-                                Songs by genre
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="/songs/mostPopular">Most popular songs by year</NavDropdown.Item>
-                            {/*<NavDropdown.Divider />*/}
-                            <NavDropdown.Item href="/songs/reviews">
-                                Song reviews
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                        <Nav.Link href="/podcasts/all">Podcasts</Nav.Link>
-                        <Nav.Link href="/songs/totalViews">Artists statistics</Nav.Link>
-                        <Nav.Link href="/audioContent/reviewStats">Monthly reviews</Nav.Link>
+                                <NavDropdown title="Songs" id="basic-nav-dropdown">
+                                    <NavDropdown.Item href="/songs/all">All</NavDropdown.Item>
+                                    <NavDropdown.Item href="/songs/byGenre">
+                                        Songs by genre
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item href="/songs/mostPopular">Most popular songs by
+                                        year</NavDropdown.Item>
+                                    {/*<NavDropdown.Divider />*/}
+                                    <NavDropdown.Item href="/songs/reviews">
+                                        Song reviews
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                                <Nav.Link href="/podcasts/all">Podcasts</Nav.Link>
+                                <Nav.Link href="/songs/totalViews">Artists statistics</Nav.Link>
+                                <Nav.Link href="/audioContent/reviewStats">Monthly reviews</Nav.Link>
 
-                        <NavDropdown title="Playlists" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/playlists/all">All</NavDropdown.Item>
-                            <NavDropdown.Item href="/playlists/getCountSongs">Playlist count of songs</NavDropdown.Item>
-                            <NavDropdown.Item href="/playlists/stats">
-                                Average songs per playlist
-                            </NavDropdown.Item>
-                        </NavDropdown>
+                                <NavDropdown title="Playlists" id="basic-nav-dropdown">
+                                    <NavDropdown.Item href="/playlists/all">All</NavDropdown.Item>
+                                    <NavDropdown.Item href="/playlists/getCountSongs">Playlist count of
+                                        songs</NavDropdown.Item>
+                                    <NavDropdown.Item href="/playlists/stats">
+                                        Average songs per playlist
+                                    </NavDropdown.Item>
+                                </NavDropdown>
 
-                        <Nav.Link href="/songs/add">Add song</Nav.Link>
-                        <Nav.Link href="/playlists/add">Add playlist</Nav.Link>
-                        <Nav.Link href="/reviews/add">Add review</Nav.Link>
-                        <Nav.Link href="/songs/insertSongIntoPlaylist">Add song to playlist</Nav.Link>
+                                <Nav.Link href="/songs/add">Add song</Nav.Link>
+                                <Nav.Link href="/playlists/add">Add playlist</Nav.Link>
+                                <Nav.Link href="/reviews/add">Add review</Nav.Link>
+                                <Nav.Link href="/songs/insertSongIntoPlaylist">Add song to playlist</Nav.Link>
 
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
 
-        <div className="App mt-3">
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/songs/reviews" element={<SongReviews/>}/>
-                <Route path="/songs/all" element={<Song/>}/>
-                <Route path="/songs/byGenre" element={<CountOfSongsPerGenre/>}/>
-                <Route path="/songs/mostPopular" element={<MostPopularSongsPerYear/>}/>
-                <Route path="/songs/totalViews" element={<TotalViewsOfArtistSongs/>}/>
-                <Route path="/podcasts/all" element={<Podcast/>}/>
-                <Route path="/playlists/all" element={<UserPlaylist/>}/>
-                <Route path="/playlists/stats" element={<AverageCountOfSongsPerUserPlaylist/>}/>
-                <Route path="/playlists/getCountSongs" element={<CountOfSongsPerPlaylist/>}/>
-                <Route path="/audioContent/reviewStats" element={<MonthlyReviewsAndAverageGradePerAudioContent/>}/>
+                <div className="App mt-3">
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/songs/reviews" element={<SongReviews/>}/>
+                        <Route path="/songs/all" element={<Song/>}/>
+                        <Route path="/songs/byGenre" element={<CountOfSongsPerGenre/>}/>
+                        <Route path="/songs/mostPopular" element={<MostPopularSongsPerYear/>}/>
+                        <Route path="/songs/totalViews" element={<TotalViewsOfArtistSongs/>}/>
+                        <Route path="/podcasts/all" element={<Podcast/>}/>
+                        <Route path="/playlists/all" element={<UserPlaylist/>}/>
+                        <Route path="/playlists/stats" element={<AverageCountOfSongsPerUserPlaylist/>}/>
+                        <Route path="/playlists/getCountSongs" element={<CountOfSongsPerPlaylist/>}/>
+                        <Route path="/audioContent/reviewStats"
+                               element={<MonthlyReviewsAndAverageGradePerAudioContent/>}/>
 
-                <Route path="/playlists/add" element={<AddNewPlaylist/>}/>
-                <Route path="/reviews/add" element={<AddNewReview/>}/>
-                <Route path="/songs/add" element={<AddNewSong/>}/>
-                <Route path="/songs/insertSongIntoPlaylist" element={<InsertSongIntoPlaylist/>}/>
+                        <Route path="/playlists/add" element={<AddNewPlaylist/>}/>
+                        <Route path="/reviews/add" element={<AddNewReview/>}/>
+                        <Route path="/songs/add" element={<AddNewSong/>}/>
+                        <Route path="/songs/insertSongIntoPlaylist" element={<InsertSongIntoPlaylist/>}/>
 
-            </Routes>
-        </div>
+                    </Routes>
+                </div>
+            </ThemeProvider>
         </>
 
     );
