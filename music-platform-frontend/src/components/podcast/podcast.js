@@ -1,6 +1,6 @@
 import React, {Component, useEffect, useState} from "react";
 import PodcastRepository from "../../repository/podcastRepository";
-import {Table} from "react-bootstrap";
+import {Col, Container, Row, Table} from "react-bootstrap";
 
 
 const Podcast = () => {
@@ -15,7 +15,7 @@ const Podcast = () => {
         PodcastRepository.getAllPodcasts()
             .then((response) => {
                     setPodcasts(response.data)
-                console.log(response.data)
+                    console.log(response.data)
                 }
             );
     }
@@ -23,40 +23,49 @@ const Podcast = () => {
 
     return (
         <>
-            <Table striped border={true} hover>
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Date published</th>
-                    <th>Description</th>
-                    <th>Genre</th>
-                    <th>Music professionals</th>
-                </tr>
-                </thead>
-                <tbody>
-                {
-                    podcasts.map(podcast => {
-                        return (
+            <Container>
+                <Row>
+                    <Col>
+                        <Table striped border hover responsive size={"sm"}>
+                            <thead>
                             <tr>
-                                <td>{podcast.podcastTitle}</td>
-                                <td>{podcast.datePublished}</td>
-                                <td>{podcast.podcastDescription}</td>
-                                <td>{podcast.genreName}</td>
-                                <td>
-                                    {
-                                        podcast.musicProfessionals.map(musicProfessional => {
-                                            return (
-                                                <li>{musicProfessional.musicProfessionalName} {musicProfessional.musicProfessionalSurname} as {musicProfessional.musicProfessionalProfession}</li>
-                                            );
-                                        })
-                                    }
-                                </td>
+                                <th>Title</th>
+                                <th>Date published</th>
+                                <th>Description</th>
+                                <th>Genre</th>
+                                <th>Music professionals</th>
                             </tr>
-                        );
-                    })
-                }
-                </tbody>
-            </Table>
+                            </thead>
+                            <tbody>
+                            {
+                                podcasts.map(podcast => {
+                                    return (
+                                        <tr style={{verticalAlign: "middle"}}>
+                                            <td>{podcast.podcastTitle}</td>
+                                            <td>{podcast.podcastDatePublished}</td>
+                                            <td style={{
+                                                width: "40%",
+                                                textAlign: "left"
+                                            }}>{podcast.podcastDescription}</td>
+                                            <td>{podcast.genreName}</td>
+                                            <td>
+                                                {
+                                                    podcast.musicProfessionals.map(musicProfessional => {
+                                                        return (
+                                                            <div>{musicProfessional.musicProfessionalName} {musicProfessional.musicProfessionalSurname} as {musicProfessional.musicProfessionalProfession}</div>
+                                                        );
+                                                    })
+                                                }
+                                            </td>
+                                        </tr>
+                                    );
+                                })
+                            }
+                            </tbody>
+                        </Table>
+                    </Col>
+                </Row>
+            </Container>
         </>
     );
 }
